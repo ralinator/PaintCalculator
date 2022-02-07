@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Application.Exceptions;
+using System;
 using Xunit;
 
 namespace Application.Tests
@@ -26,7 +27,7 @@ namespace Application.Tests
         {
             Action action = () => new Room(length, width, height);
 
-            Assert.Throws<ArgumentOutOfRangeException>(action);
+            Assert.Throws<DimensionOutOfRangeException>(action);
         }
     }
 }
