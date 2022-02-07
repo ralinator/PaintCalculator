@@ -37,5 +37,34 @@
                 height = value;
             }
         }
+
+        public decimal FloorArea
+        {
+            get
+            {
+                var floorAreaCalculator = new RoomFloorAreaCalculator();
+                var area = floorAreaCalculator.Calculate(this);
+                return area;
+            }
+        }
+
+        public decimal VolumeOfPaintRequiredForWalls
+        {
+            get
+            {
+                var paintCalculator = new RoomPaintRequiredForWallsCalculator();
+                var volumeOfPaint = paintCalculator.Calculate(this);
+                return volumeOfPaint;
+            }
+        }
+        public decimal VolumeOfRoom
+        {
+            get
+            {
+                var roomVolumeCalculator = new RoomVolumeCalculator();
+                var volume = roomVolumeCalculator.Calculate(this);
+                return volume;
+            }
+        }
     }
 }
