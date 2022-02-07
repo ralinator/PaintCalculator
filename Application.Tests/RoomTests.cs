@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Xunit;
 
 namespace Application.Tests
@@ -19,6 +15,18 @@ namespace Application.Tests
             Assert.Equal(length, sut.Length);
             Assert.Equal(width, sut.Width);
             Assert.Equal(height, sut.Height);
+        }
+
+        [Theory]
+        [InlineData(-1, 2, 3)]
+        [InlineData(1, 0, 100)]
+        [InlineData(1, 1, -1)]
+        [InlineData(-1, -2, -3)]
+        public void Construct_InvalidInputs_ThrowsException(decimal length, decimal width, decimal height)
+        {
+            Action action = () => new Room(length, width, height);
+
+            Assert.Throws<ArgumentOutOfRangeException>(action);
         }
     }
 }
