@@ -17,6 +17,10 @@
         {
             get => length; set
             {
+                if (value <= 0)
+                {
+                    throw new ArgumentOutOfRangeException();
+                }
                 length = value;
             }
         }
@@ -24,6 +28,10 @@
         {
             get => width; set
             {
+                if (value <= 0)
+                {
+                    throw new ArgumentOutOfRangeException();
+                }
                 width = value;
             }
         }
@@ -31,6 +39,10 @@
         {
             get => height; set
             {
+                if (value <= 0)
+                {
+                    throw new ArgumentOutOfRangeException();
+                }
                 height = value;
             }
         }
