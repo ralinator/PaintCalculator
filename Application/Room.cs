@@ -17,10 +17,7 @@
         {
             get => length; set
             {
-                if (value <= 0)
-                {
-                    throw new ArgumentOutOfRangeException();
-                }
+                DimensionValidator.Validate(value);
                 length = value;
             }
         }
@@ -28,10 +25,7 @@
         {
             get => width; set
             {
-                if (value <= 0)
-                {
-                    throw new ArgumentOutOfRangeException();
-                }
+                DimensionValidator.Validate(value);
                 width = value;
             }
         }
@@ -39,10 +33,7 @@
         {
             get => height; set
             {
-                if (value <= 0)
-                {
-                    throw new ArgumentOutOfRangeException();
-                }
+                DimensionValidator.Validate(value);
                 height = value;
             }
         }

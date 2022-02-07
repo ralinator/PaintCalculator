@@ -4,10 +4,8 @@
     {
         public decimal Calculate(decimal length, decimal width)
         {
-            if (length <= 0 || width <= 0)
-            {
-                throw new ArgumentOutOfRangeException();
-            }
+            DimensionValidator.Validate(length);
+            DimensionValidator.Validate(width);
             var area = length * width;
             return area;
         }
