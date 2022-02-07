@@ -9,15 +9,15 @@
     <ValidationSummary />
     <div class="row">
         <div class="col-md mb-3">
-            <label for="length">Length</label>
+            <label for="length">Length (m)</label>
             <InputNumber id="length" class="form-control" @bind-Value="_roomForm.Length" />
         </div>
         <div class="col-md mb-3">
-            <label for="width">Width</label>
+            <label for="width">Width (m)</label>
             <InputNumber id="width" class="form-control" @bind-Value="_roomForm.Width" />
         </div>
         <div class="col-md mb-3">
-            <label for="height">Height</label>
+            <label for="height">Height (m)</label>
             <InputNumber id="height" class="form-control" @bind-Value="_roomForm.Height" />
         </div>
     </div>
@@ -32,7 +32,7 @@
 {
     <div class="row">
         <div class="col-md">
-            <table class="table">
+            <table class="table" style="max-width:1000px">
                 <tr>
                     <th>Floor Area</th>
                     <td>@_room.FloorArea<span>m<sup>2</sup></span></td>
