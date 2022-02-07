@@ -4,3 +4,48 @@
 
 <h1>Paint Calculator</h1>
 
+<EditForm Model="_roomForm" OnValidSubmit="HandleValidSubmit" class="mb-5">
+    <DataAnnotationsValidator />
+    <ValidationSummary />
+    <div class="row">
+        <div class="col-md mb-3">
+            <label for="length">Length</label>
+            <InputNumber id="length" class="form-control" @bind-Value="_roomForm.Length" />
+        </div>
+        <div class="col-md mb-3">
+            <label for="width">Width</label>
+            <InputNumber id="width" class="form-control" @bind-Value="_roomForm.Width" />
+        </div>
+        <div class="col-md mb-3">
+            <label for="height">Height</label>
+            <InputNumber id="height" class="form-control" @bind-Value="_roomForm.Height" />
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md">
+            <button class="btn btn-success" type="submit">Calculate</button>
+        </div>
+    </div>
+</EditForm>
+
+@if(_room != null)
+{
+    <div class="row">
+        <div class="col-md">
+            <table class="table">
+                <tr>
+                    <th>Floor Area</th>
+                    <td>@_room.FloorArea<span>m<sup>2</sup></span></td>
+                </tr>
+                <tr>
+                    <th>Paint required for walls</th>
+                    <td>@_room.VolumeOfPaintRequiredForWalls litres</td>
+                </tr>
+                <tr>
+                    <th>Volume of Room</th>
+                    <td>@_room.VolumeOfRoom<span>m<sup>3</sup></span></td>
+                </tr>
+            </table>
+        </div>
+    </div>
+}
