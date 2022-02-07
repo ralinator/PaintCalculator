@@ -1,4 +1,6 @@
-﻿namespace Application
+﻿using Application.Exceptions;
+
+namespace Application
 {
     public static class DimensionValidator
     {
@@ -6,7 +8,7 @@
         {
             if (input <= 0)
             {
-                throw new ArgumentOutOfRangeException();
+                throw new DimensionOutOfRangeException();
             }
             return input;
         }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Application.Exceptions;
+using System;
 using Xunit;
 
 namespace Application.Tests
@@ -27,7 +28,7 @@ namespace Application.Tests
         {
             Action action = () => _sut.Calculate(length, width);
 
-            Assert.Throws<ArgumentOutOfRangeException>(action);
+            Assert.Throws<DimensionOutOfRangeException>(action);
         }
     }
 }
